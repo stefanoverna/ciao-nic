@@ -31,10 +31,11 @@
 
 .messageAuthor {
   font-weight: bold;
+  margin: 0 0 20px;
 }
 
 .messageContent {
-  padding: 50px 35px;
+  padding: 50px 35px 70px;
   line-height: 1.5;
   background: white;
   margin-bottom: 20px;

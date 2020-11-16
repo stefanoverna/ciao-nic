@@ -103,8 +103,8 @@ export default function Home({ subscription }) {
           <React.Fragment key={message.id}>
             <article className={s.message}>
               <div className={s.messageContent}>
+                <p className={s.messageAuthor}>Da {message.author}</p>
                 {format(message.message)}
-                <p className={s.messageAuthor}>{message.author}</p>
               </div>
               {message.relationship && (
                 <div className={s.messageRelationship}>
@@ -119,7 +119,7 @@ export default function Home({ subscription }) {
                   <Gallery
                     photos={message.gallery}
                     renderImage={Photo}
-                    targetRowHeight={100}
+                    targetRowHeight={180}
                     margin={5}
                     onClick={handleOpenLightbox}
                   />
