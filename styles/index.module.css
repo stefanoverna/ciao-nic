@@ -1,8 +1,8 @@
 .container {
-  max-width: 680px;
+  max-width: 720px;
   margin: 50px auto;
   position: relative;
-  padding: 0 20px;
+  padding: 0 25px;
 }
 
 .title {
@@ -13,8 +13,12 @@
 
 .subtitle {
   font-family: "tiempos-headline";
-  font-size: 40px;
+  font-size: 30px;
   margin-bottom: 50px;
+
+  @media screen and (min-width: 500px) {
+    font-size: 40px;
+  }
 }
 
 .messages {
@@ -40,7 +44,11 @@
     0 7.4px 17.9px rgba(0, 0, 0, 0.042), 0 13.8px 33.4px rgba(0, 0, 0, 0.05),
     0 33px 80px rgba(0, 0, 0, 0.07);
   font-family: "tiempos-text";
-  font-size: 18px;
+  font-size: 16px;
+
+  @media screen and (min-width: 500px) {
+    font-size: 18px;
+  }
 }
 
 .messageRelationshipTitle {
@@ -52,9 +60,7 @@
 }
 
 .messageRelationship {
-  margin-top: -50px;
   position: relative;
-  left: 20px;
   padding: 25px 35px;
   line-height: 1.5;
   background: #f8f5e1;
@@ -65,9 +71,15 @@
     0 7.4px 17.9px rgba(0, 0, 0, 0.042), 0 13.8px 33.4px rgba(0, 0, 0, 0.05),
     0 33px 80px rgba(0, 0, 0, 0.07);
   font-family: "Special Elite";
-  font-size: 22px;
+  font-size: 20px;
   line-height: 1.2;
-  transform: rotate(-1deg)
+
+  @media screen and (min-width: 750px) {
+    margin-top: -50px;
+    transform: rotate(-1deg);
+    left: 20px;
+    font-size: 22px;
+  }
 }
 
 .messageGallery {
@@ -78,7 +90,7 @@
   overflow: visible; /* For IE */
   padding: 0;
   border: none;
-  border-top: medium double #888;
+  border-top: medium double #999;
   color: #333;
   text-align: center;
   margin: 100px 0;
