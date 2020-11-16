@@ -1,0 +1,65 @@
+.field {
+  display: block;
+  margin-bottom: 35px;
+}
+
+.label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.error {
+  color: red;
+  margin-bottom: 10px;
+}
+
+.input,
+.textarea {
+  display: block;
+  width: 100%;
+  border-radius: 5px;
+  border: 0;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 15px 35px;
+  box-shadow: 0 0.9px 2.2px rgba(0, 0, 0, 0.02),
+    0 2.2px 5.3px rgba(0, 0, 0, 0.028), 0 4.1px 10px rgba(0, 0, 0, 0.035),
+    0 7.4px 17.9px rgba(0, 0, 0, 0.042), 0 13.8px 33.4px rgba(0, 0, 0, 0.05),
+    0 33px 80px rgba(0, 0, 0, 0.07);
+  font-family: "tiempos-text";
+  font-size: 18px;
+}
+
+.textarea {
+  padding: 35px;
+}
+
+.submitButton {
+  display: block;
+  appearance: none;
+  border: 0;
+  border-radius: 5px;
+  width: 100%;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 20px;
+  font-weight: bold;
+  background-color: #5a67d8;
+  color: white;
+  font-size: 1.2em;
+  box-shadow: 0 0.9px 2.2px rgba(0, 0, 0, 0.02),
+    0 2.2px 5.3px rgba(0, 0, 0, 0.028), 0 4.1px 10px rgba(0, 0, 0, 0.035),
+    0 7.4px 17.9px rgba(0, 0, 0, 0.042), 0 13.8px 33.4px rgba(0, 0, 0, 0.05),
+    0 33px 80px rgba(0, 0, 0, 0.07);
+  cursor: pointer;
+}
+
+.submitButton:hover {
+  background-color: #667eea;
+}
+
+.submitButton[disabled] {
+  background: #434190;
+  color: #667eea;
+}
