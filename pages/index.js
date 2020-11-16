@@ -4,12 +4,12 @@ import { request } from "../utils/datoServer";
 import { Form } from "../components/Form";
 import s from "../styles/index.module.css";
 import { metaTagsFragment, responsiveImageFragment } from "../utils/fragments";
-import { renderMetaTags, useQuerySubscription, Image } from "react-datocms";
+import { useQuerySubscription } from "react-datocms";
 import Gallery from "react-photo-gallery";
 import Photo from "../components/Photo";
 import Carousel, { Modal, ModalGateway } from "react-images";
 
-export async function getStaticProps({ preview }) {
+export async function getServerSideProps({ preview }) {
   const graphqlRequest = {
     query: `
       {
@@ -22,6 +22,7 @@ export async function getStaticProps({ preview }) {
           id
           author
           message
+          relationship
           _createdAt
           gallery {
             src: url
@@ -51,7 +52,13 @@ export async function getStaticProps({ preview }) {
   };
 }
 
-var newlineRegex = /(\r\n|\r|\n)/g;
+const format = (str) =>
+  str.split(/(\r\n|\r|\n)/g).map(function (line, index) {
+    if (line.match(/(\r\n|\r|\n)/g)) {
+      return React.createElement("br", { key: index });
+    }
+    return line;
+  });
 
 export default function Home({ subscription }) {
   const {
@@ -96,16 +103,17 @@ export default function Home({ subscription }) {
           <React.Fragment key={message.id}>
             <article className={s.message}>
               <div className={s.messageContent}>
-                {message.message
-                  .split(newlineRegex)
-                  .map(function (line, index) {
-                    if (line.match(newlineRegex)) {
-                      return React.createElement("br", { key: index });
-                    }
-                    return line;
-                  })}
+                {format(message.message)}
                 <p className={s.messageAuthor}>{message.author}</p>
               </div>
+              {message.relationship && (
+                <div className={s.messageRelationship}>
+                  <div className={s.messageRelationshipTitle}>
+                    Come hai conosciuto Matteo?
+                  </div>
+                  {format(message.relationship)}
+                </div>
+              )}
               {message.gallery.length > 0 && (
                 <div className={s.messageGallery}>
                   <Gallery

@@ -95,19 +95,6 @@ export function Form() {
             />
           )}
         </Field>
-        <Field label="Come hai conosciuto Matteo?" name="relationship">
-          {() => (
-            <Controller
-              name="relationship"
-              as={Textarea}
-              rows={3}
-              placeholder="Scrivi come hai avuto la fortuna di incontrarlo! Dove, quando, perchè, grazie a chi?"
-              className={s.textarea}
-              control={methods.control}
-              disabled={pending}
-            />
-          )}
-        </Field>
         <Field label="Il tuo saluto" name="message">
           {() => (
             <Controller
@@ -119,6 +106,19 @@ export function Form() {
               control={methods.control}
               disabled={pending}
               rules={{ required: "Il campo è obbligatorio" }}
+            />
+          )}
+        </Field>
+        <Field label="In due righe, come hai conosciuto Matteo?" name="relationship">
+          {() => (
+            <Controller
+              name="relationship"
+              as={Textarea}
+              rows={3}
+              placeholder="Scrivi come hai avuto la fortuna di incontrarlo! Dove, quando, perchè, grazie a chi?"
+              className={s.textarea}
+              control={methods.control}
+              disabled={pending}
             />
           )}
         </Field>
