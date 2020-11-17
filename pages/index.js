@@ -18,7 +18,7 @@ export async function getServerSideProps({ preview }) {
             ...metaTagsFragment
           }
         }
-        allMessages(orderBy: _createdAt_DESC) {
+        allMessages(orderBy: _createdAt_DESC, first: 100) {
           id
           author
           message
